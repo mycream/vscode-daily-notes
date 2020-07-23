@@ -9,10 +9,10 @@
     "markdown",
     "text"
   ],
-  "version": "1.0.5",
+  "version": "1.0.6",
   "icon": "images/icon.png",
   "engines": {
-    "vscode": "^1.38.0"
+    "vscode": "^1.41.1"
   },
   "categories": [
     "Other"
@@ -39,9 +39,32 @@
           "type": "string",
           "default": "",
           "description": "Set the exact location of the file"
+        },
+        "dailyNotes.dateFormat": {
+          "type": "string",
+          "default": "",
+          "description": "Set the format of date header"
         }
       }
-    }
+    },
+    "languages": [
+      {
+        "id": "Plain Text",
+        "extensions": [
+          ".txt"
+        ]
+      }
+    ],
+    "grammars": [
+      {
+        "language": "Plain Text",
+        "scopeName": "text.notes",
+        "path": "./syntaxes/notes.tmGrammar.json",
+        "injectTo": [
+          "text.html.markdown"
+        ]
+      }
+    ]
   },
   "scripts": {
     "test": "node ./test/runTest.js"
@@ -50,7 +73,7 @@
     "@types/glob": "^7.1.1",
     "@types/mocha": "^5.2.6",
     "@types/node": "^10.12.21",
-    "@types/vscode": "^1.38.0",
+    "@types/vscode": "^1.41.1",
     "eslint": "^5.13.0",
     "glob": "^7.1.4",
     "mocha": "^6.1.4",
@@ -58,7 +81,8 @@
     "vscode-test": "^1.2.0"
   },
   "dependencies": {
-    "firstline": "2.0.2"
+    "firstline": "2.0.2",
+    "moment": "^2.25.1"
   },
   "publisher": "inaki",
   "repository": {
